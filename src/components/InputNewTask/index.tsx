@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IoMdAddCircleOutline } from 'react-icons/io';
 
 interface Props {
   value: string;
@@ -15,7 +16,9 @@ export function InputNewTask({value, setValue, onClick}: Props) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={onClick}>Criar +</button>
+      <button onClick={onClick}>
+        Criar <IoMdAddCircleOutline size={15} />
+      </button>
     </InputTask>
   );
 }
@@ -48,6 +51,11 @@ export const InputTask = styled.div`
     color: var(--gray-100);
     transition: all 0.2s;
     cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
 
     :hover {
       background-color: var(--blue-dark);
